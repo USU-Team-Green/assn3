@@ -20,7 +20,7 @@ def make_hash(s):
             hsh = block % (2 ** 128)
         hsh = hsh ^ temp
 
-    return hsh
+    return hex(hsh)
 
 
 def test():
