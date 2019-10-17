@@ -1,0 +1,42 @@
+For an algorithm to be considered a cryptographic hash function it needs a few properties. 
+
+The algorithm needs to meet the following as many of these requirements as possible: Be deterministic, efficient, 
+pre-image resistant, one-way, and collision resistant.
+
+We will examine each of this criteria with our hash function and show how/if it meets the requirements.
+
+
+Deterministic: To be deterministic means that the same input wil provide the same output every time. 
+               There is nothong in our hash function that is random or will provide any kind of variance for the output.
+               The function contains two for loops that execute the same operations the same way everytime, guaranteeing
+               the same output.
+
+
+Efficient:  As mentioned previously the algorithm contains to separate for loops. 
+            This would have our algorithm be denoted as O(n) in Big O notation. 
+            The runtime simply depends on the size of the string it self, an will not 
+            get exponentially worse the larger the input is.
+
+
+Pre-image resistant: To be pre-image resistant means it is "almost" impossible to figure out what the input 
+                     of the function was, if you were to see the output. ie if the output shows no outright correlation
+                     and looks completely different. 
+                     
+                     For example, in our function we run a few tests. Given the input: "asdfjkalsdjfklasdjfklsdajfl"
+                     You would receive the following output: "0x73616c6b666a64736c616b6a66647385"
+                     
+                     In no way does these looks related, if you were provided "0x73616c6b666a64736c616b6a66647385"
+                     there would be no obvious way how to know the input.
+                     
+                    
+
+One-Way: To be one-way means that is is hard to "invert" the hash function to make it go the other way around. 
+         By hard we would mean computationally strenuous to determine. Although this function is simple to compute,
+         a random out would require an incredible amount of computing power/time to determine the input that was given as
+         an exponential amount of algorithmswould need to be tested.
+
+
+
+Collision resistant: This means that no two inputs can provide the same output. Theoretically this is actually impossible,
+                     but we can make the probability of collision extremely low. As is the case here, it would be extremely 
+                     unlikely that two different strings would provide the same output.
