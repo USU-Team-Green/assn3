@@ -40,3 +40,5 @@ One-Way: To be one-way means that is is hard to "invert" the hash function to ma
 Collision resistant: This means that no two inputs can provide the same output. Theoretically this is actually impossible,
                      but we can make the probability of collision extremely low. As is the case here, it would be extremely 
                      unlikely that two different strings would provide the same output.
+                     
+Conclusion: The current hash function as we have it meets the basic criteria for a cryptographic hash function. There is still                            room for improvement to make further adjustments to make inverting the function more difficult. One area we could work on improving is what is referred to as the "avalanche effect". Meaning even a slight change to the input, such as one letter, ideally should massively change the hash. In our case the output of a slight modified input can resemble the original input, but we can further modify this.                
