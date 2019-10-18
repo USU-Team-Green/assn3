@@ -1,11 +1,15 @@
 \documentclass{article}
 \begin{document}
-{\bf Pseudocode: } \\
+\textbf{PseudoCode: } \\
 Break input into blocks of 16 bytes. \\
-Start with $hash = 0$ \\
+Start with $hash = 0$ \\\\
 For each block: \\
-    $a = hash$ \\
-    $hash = (hash * a) \% 2^{128}$ \\
-    $hash = hash XOR a$ \\
+\-\hspace{1cm}    $temp = hash$\\
+\-\hspace{1cm}    if $hash$ is greater than $0$:\\
+\-\hspace{2cm}    $hash = (hash * block) \% 2^{128}$ \\
+\-\hspace{1cm}    else:\\
+\-\hspace{2cm}    $hash = block \% 2^{128}$ \\
+\-\hspace{2cm}    $hash = hash$ (shifted 10 bits left) AND $2^{128}-1$\\
+\-\hspace{2cm}    $hash = hash$ XOR $temp$ \\
 return $hash$
 \end{document}
